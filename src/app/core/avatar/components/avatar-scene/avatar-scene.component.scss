@@ -1,0 +1,51 @@
+:host {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &>.face {
+
+        --head-width: 300px;
+        --head-height: 300px;
+
+        @media (max-width: 600px) {}
+
+
+        position: relative;
+        height: var(--head-height);
+        width: var(--head-width);
+        border: 1px solid black;
+
+        background-color: #fae4d4;
+
+        &>.head {
+            width: 100%;
+            height: calc(var(--head-height) / 3);
+        }
+
+        &>.eye {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+        }
+
+        &>.eye-left {
+            top: calc(var(--head-height) / 3 + var(--eye-left-offset-y, 0px));
+            left: calc(var(--head-width) / 2 - 48px - 48px - 24px + var(--eye-left-offset-x, 0px));
+        }
+
+        &>.eye-right {
+            top: calc(var(--head-height) / 3 + var(--eye-right-offset-y, 0px));
+            left: calc(var(--head-width) / 2 + 48px + 24px + var(--eye-right-offset-x, 0px));
+        }
+
+        &>.mouth {
+            width: 100%;
+            height: calc(var(--head-height) / 3);
+            position: absolute;
+            bottom: calc(0px + var(--mouth-offset-y, 0));
+            left: calc(0px + var(--mouth-offset-x, 0));
+        }
+    }
+
+}

@@ -1,0 +1,108 @@
+<mat-tab-group fitInkBarToContent>
+
+    <!-- Face configurations -->
+    <mat-tab label="Face">
+        <div class="items">
+
+            <!-- Left eye: X -->
+            <mat-slider
+                discrete
+                class="slider"
+                min="-30"
+                max="30"
+                step="1"
+            >
+                <input
+                    matSliderThumb
+                    (input)="onEyeOffsetInput('left', 'x', $event)"
+                >
+            </mat-slider>
+
+            <mat-slider
+                discrete
+                class="slider"
+                min="-30"
+                max="30"
+                step="1"
+            >
+                <input
+                    matSliderThumb
+                    (input)="onEyeOffsetInput('right', 'x', $event)"
+                >
+            </mat-slider>
+
+            <!-- Right eye: X -->
+            <mat-slider
+                discrete
+                class="slider"
+                min="-30"
+                max="30"
+                step="1"
+            >
+                <input
+                    matSliderThumb
+                    (input)="onEyeOffsetInput('left', 'y', $event)"
+                >
+            </mat-slider>
+
+            <mat-slider
+                discrete
+                class="slider"
+                min="-30"
+                max="30"
+                step="1"
+            >
+                <input
+                    matSliderThumb
+                    (input)="onEyeOffsetInput('right', 'y', $event)"
+                >
+            </mat-slider>
+
+            <!-- Mouth -->
+            <mat-slider
+                discrete
+                class="slider"
+                min="-30"
+                max="30"
+                step="1"
+            >
+                <input
+                    matSliderThumb
+                    (input)="onMouthOffsetInput('x', $event)"
+                >
+            </mat-slider>
+
+            <mat-slider
+                discrete
+                class="slider"
+                min="-30"
+                max="30"
+                step="1"
+            >
+                <input
+                    matSliderThumb
+                    (input)="onMouthOffsetInput('y', $event)"
+                >
+            </mat-slider>
+        </div>
+    </mat-tab>
+
+    @for (store of getAll(); track $index) {
+    <mat-tab [label]="store.label">
+        <div class="items">
+
+            @for(item of store.values; track $index) {
+            <app-avatar-preview
+                class="item"
+                mat-ripple
+                [avatar]="item"
+                [height]="64"
+                [width]="64"
+                (click)="onAvatarClick(item)"
+            ></app-avatar-preview>
+            }
+        </div>
+
+    </mat-tab>
+    }
+</mat-tab-group>

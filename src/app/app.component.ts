@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { type TAvatar } from '@core/avatar/interface/avatar';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'project';
+
+  protected lastClickAvatar: TAvatar | null = null
+
+  protected onAvatarClick(avatar: TAvatar) {
+    this.lastClickAvatar = avatar
+
+  }
 }

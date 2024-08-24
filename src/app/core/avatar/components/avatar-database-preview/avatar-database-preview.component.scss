@@ -1,0 +1,45 @@
+:host {
+    position: relative;
+    z-index: 0;
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 16px;
+
+        &>.item {
+            border: 1px solid gray;
+            padding: 8px;
+            transition-property: box-shadow, outline, border;
+            transition-duration: 200ms;
+            border-radius: 4px;
+        }
+
+        &>.item:hover {
+            outline: 4px solid blue;
+            box-shadow: var(--mat-app-elevation-shadow-level-5);
+        }
+
+        &>.item:hover:active,
+        &>.item:active {
+            box-shadow: var(--mat-app-elevation-shadow-level-3);
+        }
+
+    }
+
+    ::ng-deep .mat-mdc-tab-header {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: white;
+    }
+
+    ::ng-deep .mat-mdc-tab-body-wrapper {
+        z-index: 0;
+    }
+
+    ::ng-deep .slider {
+        width: calc(100% - 28px - 28px - 48px);
+    }
+}

@@ -1,0 +1,25 @@
+<div class="face">
+
+
+    <div class="head"></div>
+
+    <div
+        class="eye eye-left"
+        [style.--eye-left-offset-x]="faceConfig.eyeLeftOffsetX()"
+        [style.--eye-left-offset-y]="faceConfig.eyeLeftOffsetY()"
+    ></div>
+    <div
+        class="eye eye-right"
+        [style.--eye-right-offset-x]="faceConfig.eyeRightOffsetX()"
+        [style.--eye-right-offset-y]="faceConfig.eyeRightOffsetY()"
+    ></div>
+
+    <div class="nose"></div>
+
+    <div
+        class="mouth"
+        [style.--mouth-offset-x]="faceConfig.mouthOffsetX()"
+        [style.--mouth-offset-y]="faceConfig.mouthOffsetY()"
+    ></div>
+
+</div>

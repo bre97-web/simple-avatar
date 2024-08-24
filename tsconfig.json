@@ -21,7 +21,19 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "@core/*": [
+        "./src/app/core/*"
+      ],
+      "@shared/interface/*": [
+        "./src/app/shared/interface/*"
+      ],
+      "@shared/services/*": [
+        "./src/app/shared/services/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
